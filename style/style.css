@@ -4,36 +4,53 @@
 	padding: 0;
 }
 
-html {
-	font-size: 62.5%;
-}
-
 body {
-	background: #2b292e;
+	background: #a9a9a9;
 	color: #fafafa;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: "Nunito", sans-serif;
 	font-size: 1.6rem;
+	text-transform: uppercase;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	min-height: 100vh;
 }
 
-span {
-	border-bottom: 1px solid #534f59;
+.wrapper {
+	text-align: center;
+	font-size: 0.65em;
+}
+h1 {
 	display: inline-block;
-	font-size: 2rem;
+	margin-bottom: 10rem;
+	font-size: 3rem;
+	color: black;
+	letter-spacing: 2px;
+	padding: 0 5px;
+	background: linear-gradient(to bottom, transparent 50%, #ffe54c 50%);
+	background-size: auto;
+}
+.help {
+	font-size: 1rem;
+}
+
+span {
+	border-bottom: 2px solid #534f59;
+	display: inline-block;
+	font-size: 2.5rem;
+	font-weight: 600;
+	color: #ffe54c;
 	height: 2.4rem;
 	line-height: 2.4rem;
-	margin: 0 0.1rem;
+	margin: 0 0.2rem;
 	text-align: center;
-	text-transform: uppercase;
 	width: 2.4rem;
 }
 
 p {
-	font-weight: 300;
-	margin-bottom: 0.8rem;
+	margin-bottom: 4.5rem;
+	font-size: 1.25em;
+	letter-spacing: 1px;
 }
 
 .puzzle {
@@ -41,18 +58,42 @@ p {
 	margin-bottom: 4.8rem;
 }
 
+/* BUTTON */
 .button {
-	background: #7044a0;
-	border: none;
-	border-bottom: 2px solid #603a88;
+	font-size: 16px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 13px 20px 13px;
+	outline: 0;
+	border: 2px solid black;
 	cursor: pointer;
-	color: white;
-	font-size: 1.4rem;
-	font-weight: 300;
-	padding: 0.8rem;
-	transition: background 0.3s ease, color 0.3s ease;
+	position: relative;
+	background-color: rgba(0, 0, 0, 0);
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
 }
 
-.button:hover {
-	background: #5f3a87;
+.button:after {
+	content: "";
+	background-color: #ffe54c;
+	width: 100%;
+	z-index: -1;
+	position: absolute;
+	height: 100%;
+	top: 7px;
+	left: 7px;
+	transition: 0.2s;
+}
+
+.button:hover:after {
+	top: 0px;
+	left: 0px;
+}
+
+@media (min-width: 768px) {
+	.button {
+		padding: 13px 50px 13px;
+	}
 }
